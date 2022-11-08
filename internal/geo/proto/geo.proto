@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package geo;
+
+service Profile {
+  rpc Nearby(Request) returns (Result);
+}
+message Request {
+  float32 Lat=1;
+  flaot32 Lon=2;
+}
+
+message Result {
+    repeated string hotelIds = 1;
+}
+/*message Image {
+  string url = 1;
+  bool default = 2;
+}*/
+

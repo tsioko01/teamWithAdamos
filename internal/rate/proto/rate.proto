@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package rate;
+
+service Profile {
+  rpc GetRates(Request) returns (Result);
+}
+message Request {
+  repeated string HotelIds = 1;
+  string InDate = 2;
+  string OutDate = 3;
+}
+
+message Result {
+    repeated RatePlan RatePlans = 1;
+}
+
+message RatePlan{
+	string HotelId = 1;
+	string Code = 2;
+	string InDate = 3;
+	string OutDate = 4;
+	repeated RoomType RoomType = 5;
+}
+
+message RoomType{
+	float64 BookableRate = 1;
+	string Code = 2;
+	string RoomDescription = 3;
+	float64 TotalRate = 4;
+	flaot64 TotalRateInclusive = 5;
+}
