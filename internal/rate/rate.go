@@ -84,7 +84,7 @@ func (s *Rate) GetRates(ctx context.Context, req *pb.Request) (*pb.Result, error
 	if err != nil {
 		return nil, err
 	}
-	finalRatePlans := make(res.RatePlans, 0) /*res*/
+	finalRatePlans := make(RatePlans, 0) /*res*/
 
 	start, _ := time.Parse("2006-01-02", req.InDate)
 	end, _ := time.Parse("2006-01-02", req.OutDate)
