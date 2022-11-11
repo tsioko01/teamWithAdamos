@@ -42,7 +42,6 @@ func NewSearch(a string, p int, geoaddr string, rateaddr string, t opentracing.T
 
 // Run starts the server
 func (s *Search) Run() error {
-	func (s *Search) Run() error {
 		if s.port == 0 {
 			return fmt.Errorf("server port must be set")
 		}
@@ -81,7 +80,7 @@ func (s *Search) Run() error {
 	
 		log.Printf("Start Search server. Addr: %s:%d\n", s.addr, s.port)
 		return srv.Serve(lis)
-	}
+	
 }
 
 func (s *Search) initGeoClient() error {
