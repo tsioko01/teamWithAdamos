@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package geo;
 
-service Profile {
+service Geo {
   rpc Nearby(Request) returns (Result);
 }
 message Request {
