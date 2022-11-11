@@ -88,7 +88,7 @@ func (s *Search) initGeoClient() error {
 	if err != nil {
 		return fmt.Errorf("did not connect to geo service: %v", err)
 	}
-	s.geoClient = profile.NewGeoClient(conn)
+	s.geoClient = geo.NewGeoClient(conn)
 	return nil
 }
 
@@ -97,7 +97,7 @@ func (s *Search) initRateClient() error {
 	if err != nil {
 		return fmt.Errorf("did not connect to rate service: %v", err)
 	}
-	s.rateClient = profile.NewRateClient(conn)
+	s.rateClient = rate.NewRateClient(conn)
 	return nil
 }
 
