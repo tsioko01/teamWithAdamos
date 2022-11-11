@@ -24,9 +24,9 @@ message RatePlan{
 }
 
 message RoomType{
-	float64 BookableRate = 1;
+	Double BookableRate = 1;
 	string Code = 2;
 	string RoomDescription = 3;
-	float64 TotalRate = 4;
-	flaot64 TotalRateInclusive = 5;
+	Double TotalRate = 4;
+	Double TotalRateInclusive = 5;
 }
