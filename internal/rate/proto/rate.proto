@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package rate;
 
-service Profile {
+service Rate {
   rpc GetRates(Request) returns (Result);
 }
 message Request {
