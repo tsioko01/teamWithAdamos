@@ -85,7 +85,7 @@ func (s *Geo) Nearby(ctx context.Context, req *pb.Request) (*pb.Result, error) {
 		points = s.getNearbyPoints(float64(req.Lat), float64(req.Lon))
 		res    = &pb.Result{}
 	)
-	for _, p := range pb.points {
+	for _, p := range points {
 		res.HotelIds = append(res.HotelIds, p.Id())
 	}
 
