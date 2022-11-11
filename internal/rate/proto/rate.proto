@@ -20,7 +20,7 @@ message RatePlan{
 	string Code = 2;
 	string InDate = 3;
 	string OutDate = 4;
-	repeated RoomType RoomType = 5;
+	RoomType RoomType = 5;
 }
 
 message RoomType{
