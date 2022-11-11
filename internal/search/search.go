@@ -104,7 +104,7 @@ func (s *Search) initRateClient() error {
 // Nearby returns ids of nearby hotels ordered by ranking algo
 func (s *Search) Nearby(ctx context.Context, req *pb.NearbyRequest) (*pb.SearchResult, error) {
 	// find nearby hotels
-	nearby, err := s.geoClient.Nearby(&geo.Request{
+	nearby, err := s.geoClient.Nearby(ctx,&geo.Request{
 		Lat: req.Lat,
 		Lon: req.Lon,
 	})
@@ -113,7 +113,7 @@ func (s *Search) Nearby(ctx context.Context, req *pb.NearbyRequest) (*pb.SearchR
 	}
 
 	// find rates for hotels
-	rates, err := s.rateClient.GetRates(&rate.RateRequest{
+	rates, err := s.rateClient.GetRates(ctx,&rate.RateRequest{
 		HotelIds: nearby.HotelIds,
 		InDate:   req.InDate,
 		OutDate:  req.OutDate,
