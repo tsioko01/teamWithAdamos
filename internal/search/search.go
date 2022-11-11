@@ -113,7 +113,7 @@ func (s *Search) Nearby(ctx context.Context, req *pb.NearbyRequest) (*pb.SearchR
 	}
 
 	// find rates for hotels
-	rates, err := s.rateClient.GetRates(ctx,&rate.rateRequest{
+	rates, err := s.rateClient.GetRates(ctx,&rate.Request{
 		HotelIds: nearby.HotelIds,
 		InDate:   req.InDate,
 		OutDate:  req.OutDate,
