@@ -6,8 +6,8 @@ service Profile {
   rpc Nearby(Request) returns (Result);
 }
 message Request {
-  float32 Lat=1;
-  flaot32 Lon=2;
+  float Lat=1;
+  float Lon=2;
 }
 
 message Result {
